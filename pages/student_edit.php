@@ -1,0 +1,413 @@
+<?php 
+
+  session_start();
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BUK~AEE | Student Edit Form</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="../plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed">
+<!-- Site wrapper -->
+<div class="wrapper">
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="dashboard.php" class="nav-link">Home</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="logout.php" class="nav-link">Logout</a>
+      </li>
+    </ul>
+
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+      <!-- Navbar Search -->
+      <li class="nav-item">
+        <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+          <i class="fas fa-search"></i>
+        </a>
+        <div class="navbar-search-block">
+          <form class="form-inline">
+            <div class="input-group input-group-sm">
+              <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+              <div class="input-group-append">
+                <button class="btn btn-navbar" type="submit">
+                  <i class="fas fa-search"></i>
+                </button>
+                <button class="btn btn-navbar" type="button" data-widget="navbar-search">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </li>
+
+      <!-- Messages Dropdown Menu -->
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+          <i class="far fa-comments"></i>
+          <span class="badge badge-danger navbar-badge">3</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          <a href="#" class="dropdown-item">
+            <!-- Message Start -->
+            <div class="media">
+              <img src="../dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+              <div class="media-body">
+                <h3 class="dropdown-item-title">
+                  Brad Diesel
+                  <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
+                </h3>
+                <p class="text-sm">Call me whenever you can...</p>
+                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+              </div>
+            </div>
+            <!-- Message End -->
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <!-- Message Start -->
+            <div class="media">
+              <img src="../dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <div class="media-body">
+                <h3 class="dropdown-item-title">
+                  John Pierce
+                  <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
+                </h3>
+                <p class="text-sm">I got your message bro</p>
+                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+              </div>
+            </div>
+            <!-- Message End -->
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <!-- Message Start -->
+            <div class="media">
+              <img src="../dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <div class="media-body">
+                <h3 class="dropdown-item-title">
+                  Nora Silvester
+                  <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
+                </h3>
+                <p class="text-sm">The subject goes here</p>
+                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+              </div>
+            </div>
+            <!-- Message End -->
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
+        </div>
+      </li>
+      <!-- Notifications Dropdown Menu -->
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+          <i class="far fa-bell"></i>
+          <span class="badge badge-warning navbar-badge">15</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          <span class="dropdown-item dropdown-header">15 Notifications</span>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-envelope mr-2"></i> 4 new messages
+            <span class="float-right text-muted text-sm">3 mins</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-users mr-2"></i> 8 friend requests
+            <span class="float-right text-muted text-sm">12 hours</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-file mr-2"></i> 3 new reports
+            <span class="float-right text-muted text-sm">2 days</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+          <i class="fas fa-expand-arrows-alt"></i>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+          <i class="fas fa-th-large"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar main-sidebar-custom sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="../index3.html" class="brand-link">
+      <img src="../dist/img/buklogo.png" alt="BUK Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light">BUK~AEE</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="#" class="d-block">Alexander Pierce</a>
+        </div>
+      </div>
+
+      <!-- SidebarSearch Form -->
+      <div class="form-inline">
+        <div class="input-group" data-widget="sidebar-search">
+          <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+          <div class="input-group-append">
+            <button class="btn btn-sidebar">
+              <i class="fas fa-search fa-fw"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <?php include 'layouts/header.php'?>
+
+<!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Student Edit Form</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Student Edit Form</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <!-- left column -->
+          <div class="col-md-12">
+            <!-- general form elements -->
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">Form that allows editing Student information</h3>
+              </div>
+              <?php if (@$_SESSION['danger'] != '') {
+              echo "<div class= 'alert alert-danger'>".$_SESSION['danger'] ."</div>";
+              $_SESSION['danger'] = ''; 
+              }
+              ?>
+                <?php include 'connection.php';
+                      $id = @$_GET['id'];
+                      $department_name = '';
+                      $department_id = 0;
+                      $faculty_name = '';
+                      $faculty_id = '';
+                      $course_id = 0;
+                      $course_name ='';
+                      $level_id = 0;
+                      $level_name = '';
+                      $session_id = 0;
+                      $session_name = '';
+                      $stm = $pdo->query("SELECT c.*,    d.level_name,  e.session_name FROM student c JOIN `level` d ON c.level_id = d.id JOIN session e ON e.id = c.session_id  WHERE c.id = '$id'");
+                       
+                      $rows = $stm->fetchAll(PDO::FETCH_NUM);
+
+
+                      //$sn = 1;
+                      foreach($rows as $row) {
+                       echo $id = $row[0];
+                        echo $student_name = $row[2];
+                        echo $regno = $row[1];
+                        // $department_name = $row[4];
+                        // $department_id = $row[4];
+                        // $faculty_id = $row[5];
+                        // // $faculty_name = $row['faculty_name'];
+                        // $course_id = $row[3];
+                        // // $course_name = $row['course_name'];
+                        $level_id = $row[6];
+                       // $level_name = $row['level_name'];
+                        $session_id = $row[7];
+                        // $session_name = $row['session_name'];
+
+
+
+                      }
+                ?>
+                <form method="POST" action="student_edit.php">
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="student_name">Student Name</label>
+                    <input type="text" name = 'student_name' class="form-control" id="student_name"  placeholder="Enter Student Name">
+                  </div>
+                  <div class="form-group">
+                    <label for="student_reg">Student Registration Number</label>
+
+                    <input type="text" name="student_reg" class="form-control" id="student_reg"  placeholder="Enter Student Registration Number">
+                  </div>
+                  <!-- <div class="form-group">
+                    <label  for="course_of_study_id">Programme</label>
+                   <select id="course_of_study_id" name="course_of_study_id" class="form-control">
+                      <option value="">Select Programme</option>--> 
+                      <?php    
+    
+                        // $sql = "SELECT * FROM `course_of_study`";
+                        // $query=  mysqli_query($con, $sql);  
+                        // while ($rows = mysqli_fetch_array($query)) {
+                        //     echo '<option value='.$rows[0].'>'.$rows[1].'</option>';
+                        // }
+                      ?>
+                    <!-- </select>
+                  </div>
+                  <div class="form-group">
+                    <label  for="department_id">Department Name</label>
+                    <select id="department_id" name="department_id" class="form-control">
+                      <option value="">Select Department Name</option> -->
+                      <?php    
+    
+                        //  $sql = "SELECT * FROM `department`";
+                        // $query=  mysqli_query($con, $sql);  
+                        // while ($rows = mysqli_fetch_array($query)) {
+                        //     echo '<option value='.$rows[0].'>'.$rows[1].'</option>';
+                        // }
+                      ?>
+                    <!-- </select>
+                  </div>
+                  <div class="form-group">
+                    <label  for="faculty_name">Faculty Name</label>
+                   <select id="faculty_id" name="faculty_id" class="form-control">
+                      <option value="">Select Faculty Name</option> -->
+                      <?php    
+    
+                        // $sql = "SELECT * FROM `faculty`";
+                        // $query=  mysqli_query($con, $sql);  
+                        // while ($rows = mysqli_fetch_array($query)) {
+                        //     echo '<option value='.$rows[0].'>'.$rows[1].'</option>';
+                        // }
+                      ?>
+                    <!-- /select>
+                  </div> --><div class="form-group">
+                    <label  for="level_id">Level </label>
+                   <select id="level_id" name="level_id" class="form-control">
+                      <option value="">Select Level </option>
+                      <?php    
+    
+                      $sql = "SELECT * FROM `level` ";
+                      $query=  mysqli_query($con, $sql);  
+                      while ($rows = mysqli_fetch_array($query)) {
+                          echo '<option value='.$rows[0].'>'.$rows[1].'</option>';
+                      }
+                    ?>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label  for="session_id">Session Name</label>
+                   <select id="session_id" name="session_id" class="form-control">
+                      <option value="">Select Session</option>
+                      <?php    
+    
+                        $sql = "SELECT * FROM `session`";
+                        $query=  mysqli_query($con, $sql);  
+                        while ($rows = mysqli_fetch_array($query)) {
+                            echo '<option value='.$rows[0].'>'.$rows[1].'</option>';
+                        }
+                      ?>
+                    </select>
+                  </div>
+                               <input type="hidden" name="hidden_id" value="<?php echo($id);  ?>">
+                  </div>
+                  
+                </div>
+                <!-- /.card-body -->
+
+                <div class="card-footer">
+                  <button type="submit" name="submit" class="btn btn-primary">Updade</button>
+                </div>
+              </form>
+            </div>
+            <!-- /.card -->
+		</div>
+
+	</div>
+</div>
+</section>
+</div>
+<script type="text/javascript">
+  document.getElementById('student_name').value = '<?php echo $student_name; ?>';
+  document.getElementById('student_reg').value = '<?php echo $regno; ?>';
+  document.getElementById('level_id').selectedIndex = '<?php echo $level_id; ?>';
+  document.getElementById('session_id').selectedIndex = '<?php echo $session_id; ?>';
+</script>
+<?php include 'layout/footer.php'; 
+
+  if (isset($_POST['submit'])) {
+    // echo('arg1');
+    $hidden_id = $_POST['hidden_id'];
+    $student_reg = $_POST['student_reg'];
+    $student_name = $_POST['student_name'];
+    $programme_id = $_POST['course_of_study_id'];
+    $faculty_id = $_POST['faculty_id'];
+    $department_id = $_POST['department_id'];
+    $level_id = $_POST['level_id'];
+    $session_id = $_POST['session_id'];
+    // $year_entry_id = $_POST['session'] 
+    //echo($id);
+    $query = "";
+    if (mysqli_query($con, $query)){echo('sucess');}
+      if($pdo->exec("UPDATE `student` SET `regno`='$student_reg',`student_name`='$student_name',`course_of_study_id`='$programme_id',`department_id`='$department_id',`faculty_id`='$faculty_id',`level_id`='$level_id',`session_id`='$session_id' WHERE `id` = '$hidden_id'") === false) 
+    
+     { 
+      $_SESSION['danger'] ='Record Not Updated, Please try again, if it persist contact system Administrator';
+      echo "<meta http-equiv='refresh' content = '0; url = student_edit.php'/>";
+
+      
+     } else {
+      $_SESSION['success'] ='Record Updated Successfully';
+      echo "<meta http-equiv='refresh' content = '0; url = student_list.php'/>";
+
+      }
+  }
+?>
