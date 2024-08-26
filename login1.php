@@ -135,7 +135,7 @@ $username=$_POST["email"];
         $_SESSION["role"]=$rows[1];
         $_SESSION["username"]=$rows[2];
         $_SESSION["image_path"]=$rows[5];
-       echo "<meta http-equiv='refresh' content = '0; url = dashboard.php'/>";
+       echo "<meta http-equiv='refresh' content = '0; url = pages/dashboard.php'/>";
       }    else
           {
         echo '<div class="login">Invalid Password</div>';

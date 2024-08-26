@@ -9,17 +9,17 @@
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
   <!-- overlayScrollbars -->
-  <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <link rel="stylesheet" href="../plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
   <!-- DataTables -->
-  <link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-  <link rel="stylesheet" href="plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-  <link rel="stylesheet" href="plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+  <link rel="stylesheet" href="../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="../dist/css/adminlte.min.css">
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -203,25 +203,25 @@
                with font-awesome or any other icon font library -->
                <?php //session_start(); ?>
 <li class="nav-item"></li>
-
+ <?php include 'layouts/header.php' ?>
 <?php 
 require_once('connection.php');
 echo $role= $_SESSION["role"];
 //session_start();
- $stm = $pdo->query("SELECT a.* FROM `privileges` a JOIN access b ON a.ukey = b.privilegeukey WHERE b.roleukey = '$role' AND a.status = 1  ORDER BY sort ASC");
- //$role = $_SESSION['role'];
- $rows = $stm->fetchAll(PDO::FETCH_NUM);
- // $_SESSION['ukey'] = $row[0];
+ // $stm = $pdo->query("SELECT a.* FROM `privileges` a JOIN access b ON a.ukey = b.privilegeukey WHERE b.roleukey = '$role' AND a.status = 1  ORDER BY sort ASC");
+ // //$role = $_SESSION['role'];
+ // $rows = $stm->fetchAll(PDO::FETCH_NUM);
+ // // $_SESSION['ukey'] = $row[0];
  
- $sn = 1;
- foreach ($rows as $row) {
-   // $_SESSION['ukey'] = $row[0];
-   echo '
-   <a href="'.$row[2].'" class="nav-link">
-   <i class="'.$row[3].' nav-icon"></i>
-   <p>' . $row[1] . '</p>
- </a>';
- }
+ // $sn = 1;
+ // foreach ($rows as $row) {
+ //   // $_SESSION['ukey'] = $row[0];
+ //   echo '
+ //   <a href="'.$row[2].'" class="nav-link">
+ //   <i class="'.$row[3].' nav-icon"></i>
+ //   <p>' . $row[1] . '</p>
+ // </a>';
+ // }
 //echo $_SESSION["username"];
 
 // if ($_SESSION["username"] =='') {
@@ -374,4 +374,4 @@ echo $role= $_SESSION["role"];
     </section>
     <!-- /.content -->
   </div>
-<?php include 'footer.php'; ?>
+<?php include 'layouts/footer.php'; ?>
